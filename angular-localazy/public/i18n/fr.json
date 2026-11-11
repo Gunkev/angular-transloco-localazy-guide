@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "displayNameHelp": "Ce nom s’affiche sur votre profil.",
+    "displayNameLabel": "Nom d’affichage",
+    "emailLabel": "Adresse e-mail",
+    "eyebrow": "Votre compte",
+    "greeting": "Bonjour, {{name}} !",
+    "intro": "Modifiez le nom d’affichage et l’adresse e-mail de votre profil.",
+    "languageLabel": "Langue",
+    "languageOptions": {
+      "en": "Anglais",
+      "fr": "Français",
+      "ja": "Japonais"
+    },
+    "profileHeading": "Informations du profil",
+    "resetNote": "Les modifications sont perdues lorsque vous actualisez cette page.",
+    "save": {
+      "missingDomainDot": "Les paramètres n’ont pas été enregistrés. Le domaine de l’adresse e-mail, après le signe @, doit contenir un point, comme dans example.com.",
+      "success": "Les paramètres de votre compte ont été enregistrés."
+    },
+    "saveButton": "Enregistrer les modifications",
+    "title": "Paramètres du compte",
+    "validation": {
+      "displayNameRequired": "Saisissez un Nom d’affichage.",
+      "emailInvalid": "Saisissez une adresse e-mail au format valide.",
+      "emailRequired": "Saisissez une adresse e-mail."
+    },
+    "welcome": "Bienvenue !"
+  }
+}

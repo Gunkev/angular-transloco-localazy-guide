@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "displayNameHelp": "この名前はプロフィールに表示されます。",
+    "displayNameLabel": "表示名",
+    "emailLabel": "メールアドレス",
+    "eyebrow": "アカウント",
+    "greeting": "{{name}}さん、こんにちは！",
+    "intro": "プロフィールの表示名とメールアドレスを編集できます。",
+    "languageLabel": "言語",
+    "languageOptions": {
+      "en": "英語",
+      "fr": "フランス語",
+      "ja": "日本語"
+    },
+    "profileHeading": "プロフィール情報",
+    "resetNote": "このページを再読み込みすると、変更内容は元に戻ります。",
+    "save": {
+      "missingDomainDot": "設定は保存されませんでした。メールアドレスのドメイン（@以降の部分）には、example.comのようにドット（.）を含めてください。",
+      "success": "プロフィールの変更を保存しました。"
+    },
+    "saveButton": "変更を保存",
+    "title": "アカウント設定",
+    "validation": {
+      "displayNameRequired": "表示名を入力してください。",
+      "emailInvalid": "正しい形式のメールアドレスを入力してください。",
+      "emailRequired": "メールアドレスを入力してください。"
+    },
+    "welcome": "ようこそ"
+  }
+}

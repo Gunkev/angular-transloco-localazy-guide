@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "greeting": "Hello, {{name}}!",
+    "welcome": "Welcome!",
+    "eyebrow": "Your account",
+    "title": "Account settings",
+    "intro": "Manage the name and email address on your profile.",
+    "languageLabel": "Language",
+    "profileHeading": "Profile details",
+    "displayNameLabel": "Display name",
+    "displayNameHelp": "This name appears on your profile.",
+    "emailLabel": "Email address",
+    "saveButton": "Save changes",
+    "resetNote": "Changes reset when you reload this page.",
+    "validation": {
+      "displayNameRequired": "Enter a display name.",
+      "emailRequired": "Enter an email address.",
+      "emailInvalid": "Enter a valid email address."
+    },
+    "save": {
+      "missingDomainDot": "Settings were not saved. The email domain needs a dot, as in example.com.",
+      "success": "Your profile changes have been saved."
+    },
+    "languageOptions": {
+      "en": "English",
+      "fr": "French",
+      "ja": "Japanese"
+    }
+  }
+}

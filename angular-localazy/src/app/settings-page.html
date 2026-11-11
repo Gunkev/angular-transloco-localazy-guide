@@ -1,0 +1,98 @@
+<main class="settings" *transloco="let t">
+  <header class="page-heading">
+    <p class="eyebrow">{{ t('settings.eyebrow') }}</p>
+    <h1>{{ t('settings.title') }}</h1>
+    <p class="intro">{{ t('settings.intro') }}</p>
+    <div class="language-picker">
+      <label for="language">{{ t('settings.languageLabel') }}</label>
+      <span class="language-select">
+        <select
+          #languageSelect
+          id="language"
+          name="language"
+          [value]="activeLanguage()"
+          (change)="changeLanguage(languageSelect.value)"
+        >
+          <option value="en">{{ t('settings.languageOptions.en') }}</option>
+          <option value="fr">{{ t('settings.languageOptions.fr') }}</option>
+          <option value="ja">{{ t('settings.languageOptions.ja') }}</option>
+        </select>
+      </span>
+    </div>
+  </header>
+
+  <section class="panel" aria-labelledby="profile-heading">
+    <header class="panel-heading">
+      <h2 id="profile-heading">{{ t('settings.profileHeading') }}</h2>
+      @if (greetingName(); as name) {
+      <p>{{ t('settings.greeting', { name }) }}</p>
+      } @else {
+      <p>{{ t('settings.welcome') }}</p>
+      }
+    </header>
+
+    <form [formGroup]="profileForm" (ngSubmit)="save()" (input)="clearNotice()">
+      @let showNameError = displayName.touched && displayName.invalid; @let
+      showEmailError = email.touched && email.invalid;
+
+      <div class="field">
+        <label for="display-name">{{ t('settings.displayNameLabel') }}</label>
+        <input
+          id="display-name"
+          name="display-name"
+          type="text"
+          autocomplete="nickname"
+          formControlName="displayName"
+          required
+          [attr.aria-invalid]="showNameError ? 'true' : null"
+          [attr.aria-describedby]="
+  showNameError ? 'display-name-error display-name-help' : 'display-name-help'
+"
+        />
+        <p id="display-name-help">{{ t('settings.displayNameHelp') }}</p>
+        @if (showNameError) {
+        <p class="field-error" id="display-name-error">
+          {{ t('settings.validation.displayNameRequired') }}
+        </p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="email">{{ t('settings.emailLabel') }}</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          formControlName="email"
+          required
+          [attr.aria-invalid]="showEmailError ? 'true' : null"
+          [attr.aria-describedby]="showEmailError ? 'email-error' : null"
+        />
+        @if (showEmailError) {
+        <p class="field-error" id="email-error">
+          @if (email.hasError('required')) { {{
+          t('settings.validation.emailRequired') }} } @else { {{
+          t('settings.validation.emailInvalid') }} }
+        </p>
+        }
+      </div>
+
+      <footer class="form-footer">
+        <button type="submit">{{ t('settings.saveButton') }}</button>
+        <p class="demo-note">{{ t('settings.resetNote') }}</p>
+      </footer>
+
+      <div role="status" aria-atomic="true">
+        @if (saveResult() === 'success') {
+        <p class="notice">{{ saveSuccessMessage() }}</p>
+        }
+      </div>
+      <div role="alert" aria-atomic="true">
+        @if (saveResult() === 'missingDomainDot') {
+        <p class="notice notice-error">{{ missingDomainDotMessage() }}</p>
+        }
+      </div>
+    </form>
+  </section>
+</main>

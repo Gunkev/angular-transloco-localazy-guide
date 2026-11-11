@@ -1,0 +1,254 @@
+:host {
+  display: block;
+}
+
+.settings {
+  width: min(100% - 2rem, 38rem);
+  margin-inline: auto;
+  padding-block: clamp(2rem, 8vw, 5rem);
+}
+
+.page-heading {
+  margin-block-end: 2.5rem;
+}
+
+.eyebrow {
+  color: #384fa0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-block: 0 0.5rem;
+}
+
+h1,
+h2 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+.intro,
+.panel-heading p,
+.demo-note {
+  color: #46546c;
+  margin-block: 0.5rem 0;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #dce2ee;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 2.5rem #1525450d;
+  padding: clamp(1rem, 5vw, 2rem);
+}
+
+.language-picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-block-start: 1.25rem;
+}
+
+.language-select {
+  position: relative;
+  max-inline-size: 100%;
+}
+
+.language-select::after {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 1rem;
+  inline-size: 0.4rem;
+  block-size: 0.4rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  color: #4e628c;
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+  content: '';
+}
+
+.language-picker select {
+  display: block;
+  appearance: none;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding-block: 0.5rem;
+  padding-inline: 0.875rem 2.5rem;
+  border: 1px solid #a6b5d1;
+  border-radius: 0.625rem;
+  background: #fff;
+  color: #23385f;
+  font: inherit;
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.language-picker select:hover {
+  border-color: #7c92bc;
+}
+
+.language-picker select:focus-visible {
+  border-color: #3449a5;
+  outline: 2px solid transparent;
+  box-shadow: 0 0 0 3px #3449a54d;
+}
+
+@supports (appearance: base-select) and selector(select::picker(select)) {
+  @media (forced-colors: none) {
+    .language-picker select,
+    .language-picker select::picker(select) {
+      appearance: base-select;
+    }
+
+    .language-picker select::picker-icon {
+      display: none;
+    }
+
+    .language-picker select::picker(select) {
+      min-inline-size: 8.5rem;
+      margin-block: 0.375rem;
+      padding: 0.25rem;
+      border: 1px solid #a6b5d1;
+      border-radius: 0.625rem;
+      background: #fff;
+      color: #23385f;
+      box-shadow: 0 0.5rem 1.25rem #15254526;
+    }
+
+    .language-picker option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-block-size: 2.5rem;
+      padding: 0.375rem 0.625rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+    }
+
+    .language-picker option:checked {
+      background: #e9eff9;
+      font-weight: 650;
+    }
+
+    .language-picker option:hover,
+    .language-picker option:focus-visible {
+      background: #dfe8f7;
+    }
+
+    .language-picker option:focus-visible {
+      outline: 2px solid #3449a5;
+      outline-offset: -2px;
+    }
+
+    .language-picker option::checkmark {
+      order: 1;
+      margin-inline-start: auto;
+      color: #3449a5;
+    }
+  }
+}
+
+@media (forced-colors: active) {
+  .language-picker select {
+    appearance: auto;
+    padding-inline-end: 0.875rem;
+  }
+
+  .language-picker select:focus-visible {
+    outline-color: Highlight;
+  }
+
+  .language-select::after {
+    display: none;
+  }
+}
+
+.panel-heading {
+  overflow-wrap: anywhere;
+  margin-block-end: 1.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.375rem;
+  margin-block-end: 1.25rem;
+}
+
+label {
+  font-weight: 650;
+}
+
+input {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid #75839a;
+  border-radius: 0.5rem;
+  padding: 0.625rem 0.75rem;
+  background: #fff;
+  color: inherit;
+}
+
+input[aria-invalid='true'] {
+  border-color: #a32435;
+}
+
+.field-error {
+  color: #a32435;
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+.form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+button {
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: 0.625rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  background: #3449a5;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #283981;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid #3449a5;
+  outline-offset: 2px;
+}
+
+.demo-note {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.notice {
+  margin-block: 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #eaf6ee;
+  color: #205637;
+}
+
+.notice-error {
+  background: #fdebec;
+  color: #a32435;
+}
